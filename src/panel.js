@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { setClass } from 'cat-util';
+import { setClass } from 'rs-util';
 import Body from './body';
 import Ul from './ul';
 
@@ -11,12 +11,11 @@ class Panel extends Component {
 
     static defaultProps = {
         myStyle: 'default',
-        prefixName: 'cat'
+        prefixName: 'rs'
     }
 
-    _renderContent() {
+    renderContent() {
         let self = this;
-
         return React.Children.map(this.props.children, (child) => {
             return React.cloneElement(child, { prefixName: self.props.prefixName });
         });
@@ -37,7 +36,7 @@ class Panel extends Component {
                         {header}
                     </div>
                 }
-                {this._renderContent()}
+                {this.renderContent()}
                 {
                     footer &&
                     <div className={`${prefixName}-panel-footer`}>
