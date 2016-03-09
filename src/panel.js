@@ -11,7 +11,7 @@ class Panel extends Component {
 
     static defaultProps = {
         myStyle: 'default',
-        prefixName: 'rs'
+        prefixName: 'salt'
     }
 
     renderContent() {
