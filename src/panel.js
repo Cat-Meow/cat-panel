@@ -5,7 +5,14 @@ import Ul from './ul';
 
 class Panel extends Component {
     static  propTypes = {
-        myStyle: React.PropTypes.string,
+        myStyle: React.PropTypes.oneOf([
+            'default',
+            'primary',
+            'info',
+            'success',
+            'warning',
+            'danger'
+        ]),
         prefixName: React.PropTypes.string
     }
 
